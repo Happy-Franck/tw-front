@@ -1,0 +1,122 @@
+<!-- Navbar -->
+<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        <!-- Messages Dropdown Menu -->
+        <li class="nav-item dropdown">
+            <span class="nav-link" data-toggle="dropdown">
+                <i class="fas fa-th-large"></i>
+            </span>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <div class="dropdown-divider"></div>
+                <a routerLink="/admin/profil/update" style="cursor: pointer;" class="dropdown-item dropdown-footer drpi">Editer profil</a>
+                <a (click)="deconnexion()" style="cursor: pointer;" class="dropdown-item dropdown-footer drpi">Se déconnecter</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+<!-- /.navbar -->
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <a routerLink="/admin/profil" class="brand-link">
+        <img src="{{api}}storage/{{logo}}" class="brand-image"
+           style="opacity: .8">
+        <span class="brand-text font-weight-light">{{nom}}</span>
+    </a>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+                with font-awesome or any other icon font library -->
+                <li class="nav-header">Pour le site officiel</li>
+                <li class="nav-item">
+                    <a routerLink="/admin/profil" class="nav-link">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>
+                            Profil
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/admin/recrutements" class="nav-link">
+                        <i class="nav-icon fas fa-user-plus"></i>
+                        <p>
+                            Recrutements
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/admin/activites" class="nav-link">
+                        <i class="nav-icon fas fa-chart-line"></i>
+                        <p>
+                            Activités
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/admin/partenaires" class="nav-link">
+                        <i class="nav-icon fas fa-handshake"></i>
+                        <p>
+                            Partenaires
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-header">Nos services</li>
+                <li class="nav-item">
+                    <a routerLink="/admin/services/categories" class="nav-link">
+                        <i class="nav-icon fas fa-layer-group"></i>
+                        <p>Types</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/admin/services/technologies" class="nav-link">
+                        <i class="nav-icon fab fa-react"></i>
+                        <p>Technologies</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/admin/services/devs" class="nav-link">
+                        <i class="nav-icon fas fa-laptop"></i>
+                        <p>Services</p>
+                    </a>
+                </li>
+                <li class="nav-header">Nos personnels</li>
+                <li class="nav-item">
+                    <a routerLink="/admin/personnels" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Personnels
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>
+<script>
+    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+      dropdown[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+      } else {
+      dropdownContent.style.display = "block";
+      }
+      });
+    }
+    </script>

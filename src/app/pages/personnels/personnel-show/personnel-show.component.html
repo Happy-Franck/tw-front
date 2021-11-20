@@ -1,0 +1,27 @@
+<button class="btn btn-custom" (click)="badge(personnel.id)">Exporter badge</button>
+<button class="btn btn-custom" (click)="contrat(personnel.id)">Exporter Contrat</button>
+<span *ngIf="active()">
+    <button class="btn btn-custom" (click)="archiver(personnel.id)">Archiver</button>
+</span>
+<span *ngIf="desactive()">
+    <button class="btn btn-custom" (click)="desarchiver(personnel.id)">Désarchiver</button>
+</span>
+<hr>
+<div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xsl-12">
+        <img src="{{api}}storage/{{personnel.photo_personnel}}" class="img-fluid" alt="{{api}}storage/{{personnel.photo_personnel}}">
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xsl-12 px-5">
+        <p><strong>Nom : </strong>{{personnel.nom}}</p>
+        <p><strong>Prénom : </strong>{{personnel.prenom}}</p>
+        <p><strong>Carte d'identité national :</strong>{{personnel.cin}}</p>
+        <p><strong>Date de naissance : </strong>{{personnel.date_de_naissance}}</p>
+        <p><strong>Adresse : </strong>{{personnel.adresse}}</p>
+        <p><strong>Email : </strong>{{personnel.email}}</p>
+        <p><strong>Téléphone : </strong>+261{{personnel.telephone}}</p>
+        <p><strong>Poste : </strong>{{personnel.poste}}</p>
+        <p><strong>Statut : </strong>{{personnel.statut}}</p>
+        <p><strong>Début de travail : </strong>{{personnel.debut_de_travail}}</p>
+        <p><strong>Salaire : </strong>{{personnel.salaire}} Ariary</p>
+    </div>
+</div>

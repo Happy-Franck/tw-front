@@ -1,0 +1,9 @@
+<div class="row pt-5">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p-5">
+        <img src="{{api}}storage/{{partenaire.image_partenaire}}" alt="{{api}}{{partenaire.image_partenaire}}" class="img-fluid">
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 pt-5">
+        <h2>{{partenaire.nom}}</h2>
+        <strong>Site officiel : </strong><a [attr.href]="'//' + partenaire.url" target="_blank">{{partenaire.url}}</a>
+    </div>
+</div>

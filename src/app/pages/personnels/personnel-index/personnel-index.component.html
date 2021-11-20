@@ -1,0 +1,53 @@
+<div class="d-flex align-items-center flex-column">
+  <h1>Liste des personnels</h1>
+</div>
+<a class="btn btn-custom" routerLink="ajout">Ajouter</a>
+
+<div class="d-flex justify-content-center">
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item"><a class="nav-link active tabulation" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Actuels</a></li>
+    <li class="nav-item"><a class="nav-link tabulation" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Anciens</a></li>
+  </ul>
+</div>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <div class="row">
+      <div *ngFor="let personnel of personnels; let i = index">
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
+          <div class="card1" *ngIf="personnel.statut == 'activé'">
+            <div class="bg"></div>
+            <div class="profil">
+              <img src="{{api}}storage/{{personnel.photo_personnel}}" alt="{{api}}{{personnel.photo_personnel}}">
+            </div>
+            <div class="card_content">
+                <h6><strong>{{personnel.prenom}}</strong></h6>
+                <button class="btn btn-custom" (click)="show(personnel.id)"><i class="fas fa-eye"></i></button>
+                <button class="btn btn-custom" (click)="edit(personnel.id)"><i class="fas fa-edit"></i></button>
+                <button class="btn btn-custom" (click)="delete(personnel.id,i)"><i class="fas fa-trash-alt"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <div class="row">
+      <div *ngFor="let personnel of personnels; let i = index">
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
+          <div class="card1" *ngIf="personnel.statut == 'désactivé'">
+            <div class="bg"></div>
+            <div class="profil">
+              <img src="{{api}}storage/{{personnel.photo_personnel}}" alt="{{api}}{{personnel.photo_personnel}}">
+            </div>
+            <div class="card_content">
+                <h6><strong>{{personnel.prenom}}</strong></h6>
+                <button class="btn btn-custom" (click)="show(personnel.id)"><i class="fas fa-eye"></i></button>
+                <button class="btn btn-custom" (click)="edit(personnel.id)"><i class="fas fa-edit"></i></button>
+                <button class="btn btn-custom" (click)="delete(personnel.id,i)"><i class="fas fa-trash-alt"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

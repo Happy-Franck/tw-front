@@ -1,0 +1,33 @@
+<div class="d-flex align-items-center flex-column">
+    <h1>Modification de l'avis de recrutement</h1>
+    <form style="width: 400px; margin-top: 75px;" [formGroup]="recrutementForm" (ngSubmit)="update()">
+        <div class="form-group">
+            <label for="poste">poste :</label>
+            <input class="form-control" type="text" id="poste" [(value)]="recrutement.poste" formControlName="poste">
+        </div>
+        <div class="form-group">
+            <label for="profil">profil :</label>
+            <textarea class="form-control" type="text" id="profil"  [(value)]="recrutement.profil" formControlName="profil"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="duree">duree :</label>
+            <div class="input-group">
+                <input type="number" id="duree" class="form-control" [(value)]="recrutement.duree" formControlName="duree">
+                <div class="input-group-append">
+                    <span class="input-group-text">mois</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="technologies">technologies :</label>
+            <input class="form-control" type="text" id="technologies"  [(value)]="recrutement.technologies" formControlName="technologies">
+        </div>
+        <div class="form-group">
+            <label for="image_recrutement">Image :</label>
+            <input  class="form-control-file" type="file" id="image_recrutement" (change)="image($event)" formControlName="image_recrutement">
+        </div>
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-custom" type="submit">Mettre à jour</button>
+        </div>
+    </form>
+</div>

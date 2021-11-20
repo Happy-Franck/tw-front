@@ -1,0 +1,64 @@
+<div class="d-flex justify-content-center">
+  <h1>Liste des activites</h1>
+</div>
+
+<!-- <div class="activite-list">
+  <div *ngFor="let activite of activites; let i = index">
+    <hr/>
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <img src="{{api}}storage/{{activite.image_activite}}" alt="{{api}}{{activite.image_activite}}" class="img-fluid">
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <h5 class="mt-0">{{activite.titre}}</h5>
+        <p>{{activite.description}}</p>
+        <p>{{activite.lieu}}</p>
+        <p>{{activite.date}}</p>
+        <button class="btn btn-custom" (click)="show(activite.id)"><i class="fas fa-eye"></i></button>
+        <button class="btn btn-custom" (click)="delete(activite.id,i)"><i class="fas fa-trash-alt"></i></button>
+        <button class="btn btn-custom" (click)="edit(activite.id)"><i class="fas fa-edit"></i></button>
+      </div>
+    </div>
+    <hr>
+  </div>
+</div> -->
+
+
+
+<div class="card">
+  <div class="card-header">
+    <a class="btn btn-custom" routerLink="ajout">Ajouter</a>
+    {{msg}}
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <table id="example1" class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th>Images</th>
+        <th>Titres</th>
+        <th>Descriptions</th>
+        <th>Lieux</th>
+        <th>Dates</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let activite of activites; let i = index">
+          <td><img src="{{api}}storage/{{activite.image_activite}}" alt="{{api}}{{activite.image_activite}}" class="img-fluid"></td>
+          <td>{{activite.titre}}</td>
+          <td>{{activite.description}}</td>
+          <td>{{activite.lieu}}</td>
+          <td>{{activite.date}}</td>
+          <td>
+            <button class="btn btn-custom" (click)="show(activite.id)"><i class="fas fa-eye"></i></button>
+            <button class="btn btn-custom" (click)="delete(activite.id,i)"><i class="fas fa-trash-alt"></i></button>
+            <button class="btn btn-custom" (click)="edit(activite.id)"><i class="fas fa-edit"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- /.card-body -->
+</div>
+<!-- /.card -->

@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-center">
+    <h2>Profil</h2>
+</div>
+<a routerLink="/admin/profil/update" class="btn btn-custom">Editer profil</a>
+<div class="row pt-5">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xsl-12">
+        <img src="{{api_url}}storage/{{user.logo}}" class="img-fluid">
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xsl-12 p-5">
+        <div class="mb-3">
+            <strong>Nom Entreprise: </strong> {{user.nom_entreprise}}
+        </div>
+        <div class="mb-3">
+            <strong>Adresse Siège Social: </strong> {{user.adresse_siege_social}}
+        </div>
+        <div class="mb-3">
+            <strong>Gérant: </strong> {{user.gerant}}
+        </div>
+        <div class="mb-3">
+            <strong>Sébut d'activité: </strong> {{user.debut_d_activite}}
+        </div>
+        <div class="mb-3">
+            <strong>Téléphone : </strong> +261{{user.telephone}}
+        </div>
+        <div class="mb-3">
+            <strong>Numero RCS :</strong> 0{{user.numero_rcs}}
+        </div>
+        <div class="mb-3">
+            <strong>Mail de contact : </strong>{{user.mail_de_contact}}
+        </div>
+        <div class="mb-3">
+            <strong>Email : </strong> {{user.email}}
+        </div>
+    </div>
+</div>

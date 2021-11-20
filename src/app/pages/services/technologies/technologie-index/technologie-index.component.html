@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-center">
+  <h1>Liste des technologies</h1>
+</div>
+<a class="btn btn-custom" routerLink="ajout">Ajouter</a>
+{{msg}}
+<div class="technologie-liste">
+  <div class="row">
+    <div *ngFor="let technologie of technologies; let i = index" class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-6">
+      <div class="technologie-item">
+        <img src="{{api}}storage/{{technologie.image_technologie}}" class="img-fluid" alt="{{api}}storage/{{technologie.image_technologie}}"/>
+        <h5>{{technologie.nom}}</h5>
+        <button class="btn btn-custom" (click)="show(technologie.id)"><i class="fas fa-eye"></i></button>
+        <button class="btn btn-custom" (click)="edit(technologie.id)"><i class="fas fa-edit"></i></button>
+        <button class="btn btn-custom" (click)="delete(technologie.id,i)"><i class="fas fa-trash-alt"></i></button>
+      </div>
+    </div>
+  </div>
+</div>

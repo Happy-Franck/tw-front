@@ -1,0 +1,20 @@
+<div class="d-flex justify-content-center">
+  <h1>Liste des services</h1>
+</div>
+<a class="btn btn-custom" routerLink="ajout">Ajouter</a>
+{{msg}}
+<div>
+  <div *ngFor="let dev of devs; let i = index" class="row my-3">
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+      <img src="{{api}}storage/{{dev.image_service}}" class="img-fluid" alt="{{api}}{{dev.image_service}}">
+    </div>
+    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-6 col-xs-12">
+      <h3>{{dev.nom}}</h3>
+      <p>{{dev.description}}</p>
+      <button class="btn btn-custom" (click)="show(dev.id)"><i class="fas fa-eye"></i></button>
+      <button class="btn btn-custom" (click)="edit(dev.id)"><i class="fas fa-edit"></i></button>
+      <button class="btn btn-custom" (click)="delete(dev.id,i)"><i class="fas fa-trash-alt"></i></button>
+    </div>
+    <hr>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="d-flex align-items-center flex-column py-3">
+  <h3 style="margin:auto;" class="pb-3"><strong>Catégorie : </strong>{{categorie.type_service}}</h3>
+  <img style="margin:auto;" src="{{api}}storage/{{categorie.image_categorie_service}}" width="60%" alt="{{api}}{{categorie.image_categorie_service}}">
+</div>
+<hr>
+<div class="d-flex justify-content-center my-3">
+  <h2>Liste des services</h2>
+</div>
+<div class="service-list">
+  <div *ngFor="let service of services; let i = index" class="row my-3">
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+      <img src="{{api}}storage/{{service.image_service}}" class="img-fluid" alt="{{api}}{{service.image_service}}">
+    </div>
+    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-6 col-xs-12">
+      <h3>{{service.nom}}</h3>
+      <p>{{service.description}}</p>
+    </div>
+  </div>
+</div>
